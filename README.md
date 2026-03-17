@@ -1,15 +1,55 @@
+# Setup
+
+Install the necessary dependencies:
+
+- [GNU Autoconf](https://www.gnu.org/software/autoconf/autoconf.html)
+
+  - `sudo apt install autoconf` on Debian-based distros (e.g., Ubuntu)
+  - `sudo dnf install autoconf` on Red Hat-based distros (e.g.,
+    Fedora)
+
+- [GNU Libtool](https://www.gnu.org/software/libtool/)
+
+  - `sudo apt install libtool` on Debian-based distros (e.g., Ubuntu)
+  - `sudo dnf install libtool` on Red Hat-based distros (e.g., Fedora)
+
+- [GNU zip (gzip)](http://www.zlib.net/) Allows GNU zipped RDF input
+  files to be ingested, and allows GNU zipped HDT files to be loaded.
+
+  - `sudo apt install gzip` on Debian-based distros (e.g., Ubuntu)
+  - `sudo dnf install gzip` on Red Hat-based distros (e.g., Fedora)
+
+- [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
+  A helper tool for compiling applications and libraries.
+
+  - `sudo apt install pkg-config` on Debian-based distros (e.g.,
+    Ubuntu)
+  - `sudo dnf install pkgconf-pkg-config` on Red Hat-based distros
+    (e.g., Fedora)
+
+- [Serd v0.28+](https://github.com/drobilla/serd) The default parser
+  that is used to process RDF input files.  It supports the N-Quads,
+  N-Triples, TriG, and Turtle serialization formats.
+
+  - `sudo apt install libserd-0-0 libserd-dev` on Debian-based distros
+    (e.g., Ubuntu)
+  - `sudo dnf install serd serd-devel` on Red Hat-based distros (e.g.,
+    Fedora)
+
+- [GNU Lib]
+  - `sudo apt install gnulib` on Debian-based distros (e.g., Ubuntu)
+
+
 # Compilation
 
-To compile, go inside /smartKG-creator/hdt-cpp-molecules
+To compile, go inside the root folder and execute following commands in order:
 
-## Clean code
-
-make clean
-
-## Compile
+```
+./gnulib.sh
 ./autogen.sh
 ./configure
-make
+make -j4
+```
 
 # Show statistics 
 

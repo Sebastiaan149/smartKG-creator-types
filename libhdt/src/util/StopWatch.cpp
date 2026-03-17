@@ -33,6 +33,7 @@
 #include <string.h> // For memcpy()
 
 #include "StopWatch.hpp"
+#include <cstdint>
 
 StopWatch::StopWatch() {
 #ifdef WIN32
