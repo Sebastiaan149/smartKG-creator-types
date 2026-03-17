@@ -28,7 +28,7 @@ static SerdSyntax getType(RDFNotation notation) {
 
 static size_t file_sink(const void* buf, size_t len, void* stream)
 {
-	return fwrite(buf, len, 1, reinterpret_cast<FILE*>(stream));
+	return fwrite(buf, 1, len, reinterpret_cast<FILE*>(stream));
 }
 
 RDFSerializerSerd::RDFSerializerSerd(const char *fileName,
