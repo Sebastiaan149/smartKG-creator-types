@@ -88,3 +88,22 @@ make -j4
 -G: This argument exports each family into a separate JSON file.
 -v: This argument enables verbose mode, providing detailed results by printing all triples during partitioning. We recommend using this argument only for testing purposes.
 -h: This argument provides a verbose explanation of the available arguments.
+
+
+Example for TYPED-FAMILY partitioning using classes.txt file:
+
+1. Generate classes file:
+./make_filtered_classes.sh data/dataset.nt 0.001 20 classes.txt
+
+2. Partitioning using the classes file:
+
+./hdt-cpp-molecules/libhdt/tools/getFamilies dataset.hdt -e metadata -C classes.txt
+
+OR (from data folder):
+../../smartKG-creator-types/libhdt/tools/getFamilies ../dataset.hdt -e metadata -C ../classes.txt 
+
+
+# Convert NT to HDT files (necessary for partitioning transfer):
+
+(from data nt folder):
+.convertToHDT.sh <destinationFolderName>
